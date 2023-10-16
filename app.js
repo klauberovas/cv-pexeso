@@ -6,14 +6,14 @@ let otoceneKarticky = [];
 //pole nalezených dvojic
 let zablokovaneKarticky = [];
 
-const otocKartu = (karta) => {
+const otocKartu = (e) => {
   //nedelej nic pokud neobsahuje třidu .otocena nebo je disabled
-  if (!karta.target.classList.contains('otocena') || karta.disabled === true) {
+  if (!e.target.classList.contains('otocena') || e.disabled === true) {
     return;
   }
   //otoč kartu
-  karta.target.classList.remove('otocena');
-  otoceneKarticky.push(karta);
+  e.target.classList.remove('otocena');
+  otoceneKarticky.push(e);
 
   if (otoceneKarticky.length === 2) {
     const [karticka1, karticka2] = otoceneKarticky;
